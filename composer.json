@@ -1,0 +1,20 @@
+{
+	"descirption": "Site Peixe",
+	"author": [
+		{
+			"name": "Vanderson",
+			"email": "VandersonMilagre@hotmail.com.br"
+		}
+	],
+	"require": {
+		"monolog/monolog": "2.0.*",
+		"stripe/stripe-php": "7.94.*"
+	},
+	"autoload": {
+		"psr-4": {
+			"Site\\": "app/site",
+			"Config\\": "config",
+			"App\\": "app"
+		}
+	}
+}

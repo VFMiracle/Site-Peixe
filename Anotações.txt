@@ -1,0 +1,76 @@
+INFORMAÇÕES PARA O TESTE DO ENVIO DE UM PEDIDO:
+	Vanderson
+	Faria Milagre
+	VandersonMilagre@hotmail.com.br
+	28999654859
+	Rua Cloacyr Geanine Costa
+	219
+	29345000
+	4000000760000002
+
+MODIFICAÇÕES AOS TEMPLATES ORIGINAIS DAS PÁGINAS:
+	- Diversos elementos da template original do site, incluindo aqueles que poderiam ser úteis no desenvolvimento de sistemas futuros, foram excluídos para facilitar a legibilidade dos arquivos. Caso deseje-se reutilizar algum desses elementos em um sistema futuro, procure por ele em um dos backups do projeto, no arquivo .rar do template original, que também está nas pastas de backups ou nas pastas do "projetobase" e/ou "educa-nos".
+	- A importação do arquivo 'nice-select.css' do arquivo 'style.css' foi apagada. A importação parecia buscar por um arquivo local, mas ele não existe nas pastas do projeto atual, nem nas pastas do template original.
+
+NOMECLATURA:
+	- As constantes de tipos de infomação simples (int, float, string, array(PHP), dicionário(PHP)) devem ser escritas em UPPER_CASE_SNAKE_CASE (todas as palavras são escritas em maiúsculo e são separadas por um '_').
+	- Os nomes de variáveis, funções, e ids e classes HTML devem ser escritos em camelCase (a primeira palavra é minúscula e todas as outras são capitalizadas).
+	- Os nomes de classes, de constantes de informação complexa (array(Javascript), dicionário(Javascript), objeto), de scripts de controladores, modelos e configuração, e de colunas do banco de dados devem ser escritos em PascalCase (a primeira letra de cada palavra é maiúscula e não há espaços entre elas).
+	- Os nomes dos scripts visuais, Javascript e CSS devem ser escritos em kebab-case (todas as letras devem ser minúsculas e as palavras devem ser separadas por '-').
+	- Os nomes das pastas devem ser escritos usando somente letra minúscula, com espaços simples entre as palavras e sem utilizar qualquer acento. A exceção a essa regra são as pastas que tentam replicar alguma organização do banco de dados, e então vão possuir a mesma nomeclatura que esse.
+	- As entradas de dicionários que guardam informações que foram retiradas diretamente do banco de dados ou serão salvas nesse têm suas chaves escritas em PascalCase, já as entradas de dicionários que guardam quaisquer outros tipos de informação têm suas chaves escritas em camelCase.
+	ALTERAÇÕES A ELEMENTOS DOS ARQUIVOS .CSS BASE:
+		- Qualquer alteração a um elemento desse tipo de arquivo não necessitará de uma alteração ao nome desse elemento.
+	DICIONÁRIO DE INFORMAÇÕES DO BANCO DE DADOS:
+		- As chaves deste dicionário estão escritas no mesmo formato que as colunas das tabelas do banco de dados, ou seja elas estão escritas em PascalCase.
+
+ORDEM DE LISTAGEM DE FUNÇÕES:
+	- 1) Separar-las em dois grupos: "Funções do Sistema" e "Funções Pessoais". As "Funções do Sistema" serão descritas primeiro.
+	- 2) Ordenar por nível de acesso em ordem decrescente.
+	- 3) Ordenar decrescentemente por número de chamadas a outras funções de seu script.
+	- 4) Aquelas que não tiverem valor de retorno são descritas antes daquelas que tem.
+	- 5) Ordenar pela quantidade de parâmetros recebidos em ordem decrescente.
+	- 6) Ordenar pelo nome, alfabeticamente.
+
+ORDEM DE LISTAGEM DE INCÓGNITAS:
+	- 1) Agrupar as incógnitas que guardam informações relacionadas.
+	- 2) Organizar os grupos pela informação de cada um deles, alfabeticamente. Essa será o primeiro termo do comentário que descreve para que as incógnitas desse grupo são utilizadas.
+	- 3) Ordenar as incógnitas em cada grupo por seu nível de acesso, em ordem decrescente.
+	- 4) Ordenar as incógnitas em cada grupo por seu nome, alfabeticamente.
+
+OUTRAS OBSERVAÇÕES:
+	- Os scripts de tipo 'View' não devem modificar as variáveis que os seus controladores lhes enviam.
+	- O script 'loja-principal.js' não deve sofrer nenhuma modificação em seus comentários até o sistema de filtragem de sua página correspondente ser reescrito.
+	- Há uma maneira de utilizar a função 'session_start' para criar um '$_SESSION' que já possui valores.
+
+STRIPE - NÚMERO DE CARTÃO DE CRÉDITO PARA TESTES:
+	- 4000000760000002.
+
+COISAS A FAZER:
+	- ESTE PROJETO FOI ABANDONADO POIS O "GORDO" NÃO VAI MAIS UTILIZA-LO. Caso ele seja continuado: Garantir que todos os scripts PHP estejam seguindo o padrão atual de aspas e o modelo atual de comentários. Após isso, começar a desenvolver a área administrativa.
+	QUANDO COMEÇAR A MONTAR A ÁREA ADMINISTRATIVA:
+		- A imagem de cada produto que é exibida na página 'loja-principal' deve ter o mesmo "aspect ratio" (proporção) que as imagens correspondentes dos outros produtos.
+		- Todas as imagens de um produto que são exibidas na página 'loja-detalhada' devem ter o mesmo "aspect ratio" (proporção).
+	POSSÍVELMENTE, QUANDO O SISTEMA PRINCIPAL DE COMPRA DO SITE E A ÁREA ADMINISTRATIVA FOREM CONCLUÍDOS (As entradas a seguir estão listadas por importância em ordem decrescente.):
+		- Criar uma página de ERRO 404 para o site e garantir que ela funcione corretamente.
+		- Reescrever o sistema de filtragem da página 'loja-principal' para que funcione por meio de uma função anônima de startup ao invés de 'onclicks' definidos em seu script visual.
+		- Modificar as células de exibição de produtos da página 'loja-principal' para que suas classes também descrevam o 'Tipo' e o 'Grupo' de seus respectivos produtos. Depois, deve-se modificar o sistema de filtragem para que leve esses novos fatores em conta.
+			- Garantir que o javascript desta página esteja utilizando a função 'addEventListener' ao invés de deixar que o script visual dela faça chamadas às suas funções.
+			- Verificar se a conversão de 'idsPescadoValido' em string na primeira função do javascript é necessária. Já que, os ids vêm em formato de string logo que são extraídos do banco de dados.
+		- Permitir que a página visual 'carrinho' atualize os valores que estão salvos no $_SESSION, especificamente as quantidades dos produtos e o preço total do carrinho. O uso de uma ferramenta/método de programação javascript chamada AJAX será provalmente necessário.
+		- Garantir que os valores em dinheiro das páginas 'carrinho' e 'checkout' estejam sendo exibidos corretamente.
+		- Modificar o botão 'Adicionar ao Carrinho' da página 'loja-detalhada' para que ele tenha uma aparência melhor. Utilizar os botões do template original do site como base.
+		- Garantir que a frase que lista a quantidade de produtos que estão sendo exibidos, que fica ao lado do selecionador de organização das células dos produtos, no script visual da página 'loja-principal', esteja sendo modificada de acordo com o estado de filtragem da página.
+		- Criar os sistemas que permitam aplicar e exibir descontos para os produtos do site.
+		- Verificar se um sistema de filtragem em PHP não seria mais optimizado e seguro do que a versão atual dele.
+			- Caso o sistema em PHP seja montado, fazer-lo garantir que as células dos produtos estejam ordenadas alfabeticamente, independentemente do estado de filtragem em que a página se encontra.
+		- Garantir que as células dos produtos estejam ordenadas alfabeticamente, independentemente do estado de filtragem em que a página se encontra.
+		- Utilizar a base que está no script visual da página 'loja-principal' para criar um sistema de ordenação das células dos produtos.
+		- Implementar um sistema de cupons utilizando os elementos presentes no template original da página 'carrinho'.
+		- Permitir que o usuário adicione produtos ao carrinho de compras por meio da página 'loja-principal'.
+		- Implementar a barra lateral do carrinho de compras que estava presente no template original do site.
+		- Decidir se o segundo modo de exibição na página 'loja-principal' será usado ou se ele pode ser apagado.
+		- Permitir que a divisória de quantidade da página 'loja-detalhada' mostre a quantidade selecionada do produto em relação a unidade de venda dele.
+		- Garantir que o dicionário 'prdtsPorTipo' da função 'principal' do script controlador 'Loja' não possa ser transformado em uma variável local.
+	APÓS OU DURANTE A PASSAGEM DO SITE PARA UM SERVIDOR EXTERNO:
+		- Comprar e instalar um SSL no site para que o protocólo desse seja convertido para HTTPS, o qual é necessário para Stripe funcionar. A compra desse pode ser realizada pela companhia responsável por dar host ao site dessa forma eles mesmos também vão encarregar-se da instalação.
